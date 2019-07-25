@@ -16,19 +16,51 @@
         #header {
             font-size: 60px;
         }
+
         .orange {
-            color: orangered;
+            color: rgb(253, 87, 27);
         }
     </style>
 </head>
 
 <body>
     <div id="root" class="content"></div>
+
+    
+
     <script type="text/babel">
 
         let country = "Thailand";
+        let Hello = () => {
+            return (
+                <div>
+                    <h1 id="header" className="orange" >Hello {country}</h1>
+                </div>
+            )
+        }
+
+        let LoginForm = () => {
+            return (
+                <div>
+                    <form action="" method="get">
+                        <label htmlFor="username">Username:</label>
+                        <input type="text" name="" id="username" />
+                        <label htmlFor="password">Password:</label>
+                        <input type="text" name="" id="password" />
+                        <input type="button" value="submit" />
+                    </form>
+                </div>
+            )
+        }
         ReactDOM.render(
-            <h1 id="header" className="orange" >Hello {country}</h1>,
+            (
+                <div>
+                        <LoginForm/>
+                        <br/>
+                        <LoginForm/>
+                </div>
+            ),
+            
             document.getElementById("root")
         )
     </script>
